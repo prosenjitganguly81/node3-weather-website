@@ -13,6 +13,7 @@ const partialDirectory=path.join(__dirname,'../templates/partials')
 
 // setup handlebars
 const app= express()
+const port = process.env.PORT||3000
 app.set('views',viewDirectory)
 app.set('view engine','hbs')
 hbs.registerPartials(partialDirectory)
@@ -88,6 +89,6 @@ app.get('/products',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log("Server is up and running on port 3000")
+app.listen(port,()=>{
+    console.log("Server is up and running on port "+ port )
 })
